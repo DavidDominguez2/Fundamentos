@@ -31,6 +31,7 @@ namespace Fundamentos
             //SE REPRENTAN DE FORMA GRAFICA Y AYUDAN AL PROGRAMADOR
             this.txtNombre.TextAlign = HorizontalAlignment.Center;
             this.BackColor = Color.Chocolate;
+            this.btnPulsar.BackColor = Color.LightBlue;
 
         }
 
