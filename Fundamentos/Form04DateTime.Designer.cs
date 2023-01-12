@@ -32,12 +32,12 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.chkChangeFormatDate = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnIncrement = new System.Windows.Forms.Button();
+            this.txtIncrement = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rdbYears = new System.Windows.Forms.RadioButton();
             this.rdbMonths = new System.Windows.Forms.RadioButton();
             this.rdbDays = new System.Windows.Forms.RadioButton();
-            this.rdbYears = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtIncrement = new System.Windows.Forms.TextBox();
-            this.btnIncrement = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNewDate = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
@@ -71,6 +71,7 @@
             this.chkChangeFormatDate.TabIndex = 2;
             this.chkChangeFormatDate.Text = "Cambiar Formato Fecha";
             this.chkChangeFormatDate.UseVisualStyleBackColor = true;
+            this.chkChangeFormatDate.CheckedChanged += new System.EventHandler(this.chkChangeFormatDate_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -87,6 +88,46 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Incrementar Fecha";
+            // 
+            // btnIncrement
+            // 
+            this.btnIncrement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnIncrement.Location = new System.Drawing.Point(167, 79);
+            this.btnIncrement.Name = "btnIncrement";
+            this.btnIncrement.Size = new System.Drawing.Size(195, 40);
+            this.btnIncrement.TabIndex = 5;
+            this.btnIncrement.Text = "Incrementar";
+            this.btnIncrement.UseVisualStyleBackColor = false;
+            this.btnIncrement.Click += new System.EventHandler(this.btnIncrement_Click);
+            // 
+            // txtIncrement
+            // 
+            this.txtIncrement.Location = new System.Drawing.Point(262, 33);
+            this.txtIncrement.Name = "txtIncrement";
+            this.txtIncrement.Size = new System.Drawing.Size(100, 34);
+            this.txtIncrement.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(167, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 21);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Incremento";
+            // 
+            // rdbYears
+            // 
+            this.rdbYears.AutoSize = true;
+            this.rdbYears.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rdbYears.Location = new System.Drawing.Point(6, 147);
+            this.rdbYears.Name = "rdbYears";
+            this.rdbYears.Size = new System.Drawing.Size(63, 25);
+            this.rdbYears.TabIndex = 2;
+            this.rdbYears.TabStop = true;
+            this.rdbYears.Text = "Años";
+            this.rdbYears.UseVisualStyleBackColor = true;
             // 
             // rdbMonths
             // 
@@ -112,45 +153,6 @@
             this.rdbDays.Text = "Dias";
             this.rdbDays.UseVisualStyleBackColor = true;
             // 
-            // rdbYears
-            // 
-            this.rdbYears.AutoSize = true;
-            this.rdbYears.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbYears.Location = new System.Drawing.Point(6, 147);
-            this.rdbYears.Name = "rdbYears";
-            this.rdbYears.Size = new System.Drawing.Size(63, 25);
-            this.rdbYears.TabIndex = 2;
-            this.rdbYears.TabStop = true;
-            this.rdbYears.Text = "Años";
-            this.rdbYears.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(167, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 21);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Incremento";
-            // 
-            // txtIncrement
-            // 
-            this.txtIncrement.Location = new System.Drawing.Point(262, 33);
-            this.txtIncrement.Name = "txtIncrement";
-            this.txtIncrement.Size = new System.Drawing.Size(100, 34);
-            this.txtIncrement.TabIndex = 4;
-            // 
-            // btnIncrement
-            // 
-            this.btnIncrement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnIncrement.Location = new System.Drawing.Point(167, 79);
-            this.btnIncrement.Name = "btnIncrement";
-            this.btnIncrement.Size = new System.Drawing.Size(195, 40);
-            this.btnIncrement.TabIndex = 5;
-            this.btnIncrement.Text = "Incrementar";
-            this.btnIncrement.UseVisualStyleBackColor = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -173,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 549);
+            this.ClientSize = new System.Drawing.Size(788, 549);
             this.Controls.Add(this.txtNewDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
