@@ -33,6 +33,8 @@
             this.txtSum = new System.Windows.Forms.TextBox();
             this.txtPar = new System.Windows.Forms.TextBox();
             this.txtImpar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNumSelecteds = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lstNumbers
@@ -121,11 +123,29 @@
             this.txtImpar.Size = new System.Drawing.Size(42, 23);
             this.txtImpar.TabIndex = 9;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(171, 254);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 15);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Suma Seleccionados";
+            // 
+            // txtNumSelecteds
+            // 
+            this.txtNumSelecteds.Location = new System.Drawing.Point(292, 246);
+            this.txtNumSelecteds.Name = "txtNumSelecteds";
+            this.txtNumSelecteds.Size = new System.Drawing.Size(42, 23);
+            this.txtNumSelecteds.TabIndex = 11;
+            // 
             // Form10ColeccionNumeros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 450);
+            this.Controls.Add(this.txtNumSelecteds);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtImpar);
             this.Controls.Add(this.txtPar);
             this.Controls.Add(this.txtSum);
@@ -155,5 +175,7 @@
         private TextBox txtSum;
         private TextBox txtPar;
         private TextBox txtImpar;
+        private Label label4;
+        private TextBox txtNumSelecteds;
     }
 }
