@@ -28,6 +28,7 @@
             this.btnDouble = new System.Windows.Forms.Button();
             this.btnRef = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
+            this.btnObjectRef = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -69,17 +70,28 @@
             // lblResultado
             // 
             this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(36, 204);
+            this.lblResultado.Location = new System.Drawing.Point(36, 280);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(96, 21);
             this.lblResultado.TabIndex = 4;
             this.lblResultado.Text = "lblResultado";
             // 
+            // btnObjectRef
+            // 
+            this.btnObjectRef.Location = new System.Drawing.Point(36, 201);
+            this.btnObjectRef.Name = "btnObjectRef";
+            this.btnObjectRef.Size = new System.Drawing.Size(169, 32);
+            this.btnObjectRef.TabIndex = 5;
+            this.btnObjectRef.Text = "Objeto Referencia";
+            this.btnObjectRef.UseVisualStyleBackColor = true;
+            this.btnObjectRef.Click += new System.EventHandler(this.btnObjectRef_Click);
+            // 
             // Form12Metodos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 262);
+            this.ClientSize = new System.Drawing.Size(256, 395);
+            this.Controls.Add(this.btnObjectRef);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnRef);
             this.Controls.Add(this.btnDouble);
@@ -101,5 +113,6 @@
         private Button btnDouble;
         private Button btnRef;
         private Label lblResultado;
+        private Button btnObjectRef;
     }
 }
