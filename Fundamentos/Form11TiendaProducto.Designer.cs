@@ -45,6 +45,7 @@
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(158, 29);
             this.txtProduct.TabIndex = 0;
+            this.txtProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduct_KeyPress);
             // 
             // label1
             // 
@@ -192,7 +193,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtProduct);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form11TiendaProducto";
             this.Text = "Form11TiendaProducto";
             this.ResumeLayout(false);

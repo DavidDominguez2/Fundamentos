@@ -56,5 +56,44 @@ namespace Fundamentos {
             //CAMBIAMOS ALGO DEL OBJETO
             btn.BackColor = Color.Red;
         }
+
+        private void Form12Metodos_Load(object sender, EventArgs e) {
+
+        }
+
+        private void Form12Metodos_FormClosed(object sender, FormClosedEventArgs e) {
+
+
+        }
+
+        private void lblMouse_MouseMove(object sender, MouseEventArgs e) {
+            this.lblMouse.Text = "X: " + e.X + ", Y: " + e.Y;
+        }
+
+        private void txtNumeros_KeyPress(object sender, KeyPressEventArgs e) {
+            //LA TECLA PULSADA
+            //e.KeyChar;
+            //DESACTIVA LAS ACCIONES POSTERIORES AL EVENTO
+            //e.Handled = true;
+
+            //DEBEMOS INDICAR QUE SI ES LA TECLA DE BORRAR,
+            //TAMBIEN ESTE HABILITADO EL EVENTO
+            //char teclaBorrar = (char)8;
+            //EXISTE UNA ENUMERACION QUE NOS DEVUELVE
+            //EL CODIGO DE CADA TECLA
+            char teclaBorrar = (char)Keys.Back;
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != teclaBorrar) {
+                e.Handled = true;
+            }
+        }
+
+        private void txtLetras_KeyPress(object sender, KeyPressEventArgs e) {
+            char teclaBorrar = (char)Keys.Back;
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != teclaBorrar) {
+                e.Handled = true;
+            }
+        }
+
+
     }
 }

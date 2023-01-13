@@ -8,46 +8,40 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Fundamentos
-{
-    public partial class Form11TiendaProducto : Form
-    {
-        public Form11TiendaProducto()
-        {
+namespace Fundamentos {
+    public partial class Form11TiendaProducto : Form {
+        public Form11TiendaProducto() {
             InitializeComponent();
             this.lstShop.SelectionMode = SelectionMode.MultiExtended;
             btnUp.Enabled = false;
             btnDown.Enabled = false;
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
+        void insertProduct() {
             this.lstShop.Items.Add(this.txtProduct.Text);
             this.txtProduct.Text = "";
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (lstShop.SelectedIndices.Count > 1)
-            {
+        private void btnInsert_Click(object sender, EventArgs e) {
+            this.insertProduct();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e) {
+            if (lstShop.SelectedIndices.Count > 1) {
                 int numSeleccionados = this.lstShop.SelectedIndices.Count;
 
-                for (int i = numSeleccionados - 1; i >= 0; i--)
-                {
+                for (int i = numSeleccionados - 1; i >= 0; i--) {
                     int indice = this.lstShop.SelectedIndices[i];
                     this.lstShop.Items.RemoveAt(indice);
                 }
-            }
-            else
-            {
+            } else {
                 this.lstShop.Items.RemoveAt(this.lstShop.SelectedIndex);
             }
 
 
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
+        private void btnUpdate_Click(object sender, EventArgs e) {
             int index = this.lstShop.SelectedIndex;
 
             this.lstShop.Items.RemoveAt(index);
@@ -55,46 +49,38 @@ namespace Fundamentos
             this.txtProduct.Text = "";
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
+        private void btnClear_Click(object sender, EventArgs e) {
             this.lstShop.Items.Clear();
         }
 
-        private void btnSelect_Click(object sender, EventArgs e)
-        {
+        private void btnSelect_Click(object sender, EventArgs e) {
 
-            foreach (string elem in this.lstShop.SelectedItems)
-            {
+            foreach (string elem in this.lstShop.SelectedItems) {
                 this.lstWarehouse.Items.Add(elem);
             }
 
             int numSeleccionados = this.lstShop.SelectedIndices.Count;
 
-            for (int i = numSeleccionados - 1; i >= 0; i--)
-            {
+            for (int i = numSeleccionados - 1; i >= 0; i--) {
                 int indice = this.lstShop.SelectedIndices[i];
                 this.lstShop.Items.RemoveAt(indice);
             }
 
         }
 
-        private void btnAddAll_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < lstShop.Items.Count; i++)
-            {
+        private void btnAddAll_Click(object sender, EventArgs e) {
+            for (int i = 0; i < lstShop.Items.Count; i++) {
                 this.lstWarehouse.Items.Add(lstShop.Items[i].ToString());
             }
             this.lstShop.Items.Clear();
         }
 
-        private void btnUp_Click(object sender, EventArgs e)
-        {
+        private void btnUp_Click(object sender, EventArgs e) {
             this.lstWarehouse.Items.Insert(this.lstWarehouse.SelectedIndex - 1, this.lstWarehouse.SelectedItem.ToString());
             this.lstWarehouse.Items.RemoveAt(this.lstWarehouse.SelectedIndex);
         }
 
-        private void btnDown_Click(object sender, EventArgs e)
-        {
+        private void btnDown_Click(object sender, EventArgs e) {
             string elem = this.lstWarehouse.SelectedItem.ToString();
             int index = this.lstWarehouse.SelectedIndex;
 
@@ -103,33 +89,32 @@ namespace Fundamentos
 
         }
 
-        private void lstWarehouse_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lstWarehouse.SelectedItems.Count == 0)
-            {
+        private void lstWarehouse_SelectedIndexChanged(object sender, EventArgs e) {
+            if (lstWarehouse.SelectedItems.Count == 0) {
                 btnUp.Enabled = false;
                 btnDown.Enabled = false;
             }
 
-            if (lstWarehouse.SelectedIndex == 0)
-            {
+            if (lstWarehouse.SelectedIndex == 0) {
                 btnUp.Enabled = false;
-            }
-            else
-            {
+            } else {
                 btnUp.Enabled = true;
             }
 
-            if (lstWarehouse.SelectedIndex == lstWarehouse.Items.Count - 1)
-            {
+            if (lstWarehouse.SelectedIndex == lstWarehouse.Items.Count - 1) {
                 btnDown.Enabled = false;
-            }
-            else
-            {
+            } else {
                 btnDown.Enabled = true;
             }
         }
 
+        private void txtProduct_KeyPress(object sender, KeyPressEventArgs e) {
+            char teclaInsert = (char)Keys.Insert;
 
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != teclaInsert) {
+                e.Handled = true;
+                this.insertProduct();
+            }
+        }
     }
 }
