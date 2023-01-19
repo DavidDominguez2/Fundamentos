@@ -58,7 +58,7 @@ namespace Fundamentos {
                 }
                 med += this.numeros[i];
             }
-            med = med / 12;
+            med = med / this.numeros.Count;
 
             this.txtMax.Text = max.ToString();
             this.txtMax.ForeColor = Color.Red;
