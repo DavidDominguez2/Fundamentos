@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Fundamentos {
-    public partial class Form18TemperaturasAnuales : Form {
+    public partial class Form17TemperaturasAnuales : Form {
         ArrayList meses;
         List<int> numeros;
-        public Form18TemperaturasAnuales() {
+        public Form17TemperaturasAnuales() {
             InitializeComponent();
             meses = new ArrayList();
             meses.Add("ENERO");

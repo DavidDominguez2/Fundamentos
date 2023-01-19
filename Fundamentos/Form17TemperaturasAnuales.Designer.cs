@@ -1,5 +1,5 @@
 ﻿namespace Fundamentos {
-    partial class Form18TemperaturasAnuales {
+    partial class Form17TemperaturasAnuales {
         /// <summary>
         /// Required designer variable.
         /// </summary>
