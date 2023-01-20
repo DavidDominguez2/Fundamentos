@@ -26,6 +26,7 @@
             this.lstPersons = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnData = new System.Windows.Forms.Button();
+            this.btnEmpleado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstPersons
@@ -56,11 +57,22 @@
             this.btnData.UseVisualStyleBackColor = true;
             this.btnData.Click += new System.EventHandler(this.btnData_Click);
             // 
+            // btnEmpleado
+            // 
+            this.btnEmpleado.Location = new System.Drawing.Point(635, 85);
+            this.btnEmpleado.Name = "btnEmpleado";
+            this.btnEmpleado.Size = new System.Drawing.Size(153, 23);
+            this.btnEmpleado.TabIndex = 3;
+            this.btnEmpleado.Text = "Crear Empleado";
+            this.btnEmpleado.UseVisualStyleBackColor = true;
+            this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
+            // 
             // Form18PruebaClases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEmpleado);
             this.Controls.Add(this.btnData);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstPersons);
@@ -76,5 +88,6 @@
         private ListBox lstPersons;
         private Label label1;
         private Button btnData;
+        private Button btnEmpleado;
     }
 }

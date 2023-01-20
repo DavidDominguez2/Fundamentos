@@ -45,5 +45,20 @@ namespace Fundamentos {
 
 
         }
+
+        private void btnEmpleado_Click(object sender, EventArgs e) {
+            //Empleado empleado = new Empleado();
+            //empleado.Nombre = "David";
+            //empleado.Apellidos = "Dominguez";
+            //this.lstPersons.Items.Add(empleado.GetNombreCompleto() + ", Vacaciones: " + empleado.GetDiasVacaciones());
+
+            Director director = new Director();
+            director.Nombre = "Director";
+            director.Apellidos = "Director";
+            this.lstPersons.Items.Add(director.GetNombreCompleto() + ", Vacaciones: " + director.GetDiasVacaciones());
+            this.lstPersons.Items.Add(director);
+
+
+        }
     }
 }

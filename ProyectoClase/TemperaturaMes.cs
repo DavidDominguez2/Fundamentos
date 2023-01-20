@@ -13,17 +13,16 @@ namespace ProyectoClase {
         #endregion
 
         #region CONSTRUCTOR
-        public TemperaturaMes(string Mes) {
-            this.Mes = Mes;
-            this.Max = new Random().Next(-20, 50);
-            this.Min = new Random().Next(-20, 50);
+        public TemperaturaMes() { }
+        public TemperaturaMes(int max, int min) {
+            this.Max = max;
+            this.Min = min;
         }
         #endregion
 
         #region METODOS
-        public int MediaTemp(int max, int min) {
-            int media = (max + min) / 2;
-            return media;
+        public int MediaTemp() {
+            return (this.Max + this.Min) / 2;
         }
         #endregion
     }
