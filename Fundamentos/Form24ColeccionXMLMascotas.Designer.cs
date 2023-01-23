@@ -25,8 +25,8 @@
         private void InitializeComponent() {
             this.txtYears = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSaveDato = new System.Windows.Forms.Button();
-            this.btnReadDato = new System.Windows.Forms.Button();
+            this.btnSaveRegister = new System.Windows.Forms.Button();
+            this.btnReadRegister = new System.Windows.Forms.Button();
             this.lbl3 = new System.Windows.Forms.Label();
             this.txtRaza = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -51,23 +51,25 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Años";
             // 
-            // btnSaveDato
+            // btnSaveRegister
             // 
-            this.btnSaveDato.Location = new System.Drawing.Point(243, 142);
-            this.btnSaveDato.Name = "btnSaveDato";
-            this.btnSaveDato.Size = new System.Drawing.Size(152, 34);
-            this.btnSaveDato.TabIndex = 22;
-            this.btnSaveDato.Text = "Guardar Registros";
-            this.btnSaveDato.UseVisualStyleBackColor = true;
+            this.btnSaveRegister.Location = new System.Drawing.Point(243, 142);
+            this.btnSaveRegister.Name = "btnSaveRegister";
+            this.btnSaveRegister.Size = new System.Drawing.Size(152, 34);
+            this.btnSaveRegister.TabIndex = 22;
+            this.btnSaveRegister.Text = "Guardar Registros";
+            this.btnSaveRegister.UseVisualStyleBackColor = true;
+            this.btnSaveRegister.Click += new System.EventHandler(this.btnSaveRegister_Click);
             // 
-            // btnReadDato
+            // btnReadRegister
             // 
-            this.btnReadDato.Location = new System.Drawing.Point(243, 88);
-            this.btnReadDato.Name = "btnReadDato";
-            this.btnReadDato.Size = new System.Drawing.Size(152, 34);
-            this.btnReadDato.TabIndex = 21;
-            this.btnReadDato.Text = "Leer Registros";
-            this.btnReadDato.UseVisualStyleBackColor = true;
+            this.btnReadRegister.Location = new System.Drawing.Point(243, 88);
+            this.btnReadRegister.Name = "btnReadRegister";
+            this.btnReadRegister.Size = new System.Drawing.Size(152, 34);
+            this.btnReadRegister.TabIndex = 21;
+            this.btnReadRegister.Text = "Leer Registros";
+            this.btnReadRegister.UseVisualStyleBackColor = true;
+            this.btnReadRegister.Click += new System.EventHandler(this.btnReadRegister_Click);
             // 
             // lbl3
             // 
@@ -109,6 +111,7 @@
             this.btnNewMascota.TabIndex = 25;
             this.btnNewMascota.Text = "Nueva Mascota";
             this.btnNewMascota.UseVisualStyleBackColor = true;
+            this.btnNewMascota.Click += new System.EventHandler(this.btnNewMascota_Click);
             // 
             // lstMascotas
             // 
@@ -118,6 +121,7 @@
             this.lstMascotas.Name = "lstMascotas";
             this.lstMascotas.Size = new System.Drawing.Size(260, 229);
             this.lstMascotas.TabIndex = 26;
+            this.lstMascotas.SelectedIndexChanged += new System.EventHandler(this.lstMascotas_SelectedIndexChanged);
             // 
             // Form24ColeccionXMLMascotas
             // 
@@ -128,8 +132,8 @@
             this.Controls.Add(this.btnNewMascota);
             this.Controls.Add(this.txtYears);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnSaveDato);
-            this.Controls.Add(this.btnReadDato);
+            this.Controls.Add(this.btnSaveRegister);
+            this.Controls.Add(this.btnReadRegister);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.txtRaza);
             this.Controls.Add(this.txtName);
@@ -145,8 +149,8 @@
 
         private TextBox txtYears;
         private Label label2;
-        private Button btnSaveDato;
-        private Button btnReadDato;
+        private Button btnSaveRegister;
+        private Button btnReadRegister;
         private Label lbl3;
         private TextBox txtRaza;
         private TextBox txtName;
