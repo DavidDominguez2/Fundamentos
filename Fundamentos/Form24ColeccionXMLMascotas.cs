@@ -1,4 +1,5 @@
-﻿using ProyectoClase.Models;
+﻿using ProyectoClase.Helpers;
+using ProyectoClase.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Fundamentos {
     public partial class Form24ColeccionXMLMascotas : Form {
         XmlSerializer serializer;
         List<Mascota> coleccionMascotas;
+        string path;
 
         public Form24ColeccionXMLMascotas() {
             InitializeComponent();
@@ -28,8 +30,13 @@ namespace Fundamentos {
             mascota.Nombre = this.txtName.Text;
             mascota.Raza = this.txtRaza.Text;
             mascota.Years = int.Parse(this.txtYears.Text);
-            this.coleccionMascotas.Add(mascota);
+            //CONVERT FILE TO BYTE[]
+            mascota.Imagen = HelperMascotas.GetByteArrayFromString(this.path);
+            //PARA PINTAR NECESITAMOS LA CLASE IMAGE: Image.FromStream(stream)
+            //Stream stream = new MemoryStream(mascota.Imagen);
+            //this.pictureBox1.Image = Image.FromStream(stream);
 
+            this.coleccionMascotas.Add(mascota);
             this.txtName.Text = "";
             this.txtRaza.Text = "";
             this.txtYears.Text = "";
@@ -69,6 +76,15 @@ namespace Fundamentos {
                 this.txtName.Text = mascota.Nombre;
                 this.txtRaza.Text = mascota.Raza;
                 this.txtYears.Text = mascota.Years.ToString();
+            }
+        }
+
+        private void btnExaminar_Click(object sender, EventArgs e) {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK) {
+                this.path = ofd.FileName;
+                Stream stream = new MemoryStream(HelperMascotas.GetByteArrayFromString(this.path));
+                this.pictureBox1.Image = Image.FromStream(stream);
             }
         }
     }

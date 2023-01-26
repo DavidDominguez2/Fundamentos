@@ -63,6 +63,11 @@ namespace ProyectoClase.Helpers {
             string data = this.GetMascotasString();
             await HelperFiles.WriteFileAsync(path, data);
         }
+
+        public static byte[] GetByteArrayFromString(string filepath) {
+            byte[] bytes = File.ReadAllBytes(filepath);
+            return bytes;
+        }
         #endregion
     }
 }

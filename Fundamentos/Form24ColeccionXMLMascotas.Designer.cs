@@ -33,11 +33,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnNewMascota = new System.Windows.Forms.Button();
             this.lstMascotas = new System.Windows.Forms.ListBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnExaminar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtYears
             // 
-            this.txtYears.Location = new System.Drawing.Point(12, 160);
+            this.txtYears.Location = new System.Drawing.Point(12, 127);
             this.txtYears.Name = "txtYears";
             this.txtYears.Size = new System.Drawing.Size(45, 23);
             this.txtYears.TabIndex = 24;
@@ -45,7 +48,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 142);
+            this.label2.Location = new System.Drawing.Point(12, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 15);
             this.label2.TabIndex = 23;
@@ -74,7 +77,7 @@
             // lbl3
             // 
             this.lbl3.AutoSize = true;
-            this.lbl3.Location = new System.Drawing.Point(12, 75);
+            this.lbl3.Location = new System.Drawing.Point(12, 59);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(31, 15);
             this.lbl3.TabIndex = 20;
@@ -82,7 +85,7 @@
             // 
             // txtRaza
             // 
-            this.txtRaza.Location = new System.Drawing.Point(12, 99);
+            this.txtRaza.Location = new System.Drawing.Point(12, 83);
             this.txtRaza.Name = "txtRaza";
             this.txtRaza.Size = new System.Drawing.Size(210, 23);
             this.txtRaza.TabIndex = 19;
@@ -123,11 +126,32 @@
             this.lstMascotas.TabIndex = 26;
             this.lstMascotas.SelectedIndexChanged += new System.EventHandler(this.lstMascotas_SelectedIndexChanged);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 156);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(210, 106);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnExaminar
+            // 
+            this.btnExaminar.Location = new System.Drawing.Point(243, 195);
+            this.btnExaminar.Name = "btnExaminar";
+            this.btnExaminar.Size = new System.Drawing.Size(152, 34);
+            this.btnExaminar.TabIndex = 28;
+            this.btnExaminar.Text = "Examinar....";
+            this.btnExaminar.UseVisualStyleBackColor = true;
+            this.btnExaminar.Click += new System.EventHandler(this.btnExaminar_Click);
+            // 
             // Form24ColeccionXMLMascotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 287);
+            this.Controls.Add(this.btnExaminar);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lstMascotas);
             this.Controls.Add(this.btnNewMascota);
             this.Controls.Add(this.txtYears);
@@ -140,6 +164,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form24ColeccionXMLMascotas";
             this.Text = "Form24ColeccionXMLMascotas";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +182,7 @@
         private Label label1;
         private Button btnNewMascota;
         private ListBox lstMascotas;
+        private PictureBox pictureBox1;
+        private Button btnExaminar;
     }
 }
